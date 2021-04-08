@@ -136,19 +136,6 @@
 		$(".mobile-nav, .mobile-nav-toggle").hide();
 	}
 
-	// Header scroll class
-	// $(window).scroll(function () {
-	// 	if ($(this).scrollTop() > 100) {
-	// 		$("#header").addClass("header-scrolled");
-	// 	} else {
-	// 		$("#header").removeClass("header-scrolled");
-	// 	}
-	// });
-
-	// if ($(window).scrollTop() > 100) {
-	// 	$("#header").addClass("header-scrolled");
-	// }
-
 	// Navigation active state on scroll
 	var nav_sections = $("section");
 	var main_nav = $(".nav-menu, .mobile-nav");
@@ -195,25 +182,6 @@
 				  );
 		});
 
-	// introCarousel.on("slid.bs.carousel", function (e) {
-	// 	$(this).find("h2").addClass("animate__animated animate__fadeInDown");
-	// 	$(this)
-	// 		.find("p, .btn-get-started")
-	// 		.addClass("animate__animated animate__fadeInUp");
-	// });
-
-	// Skills section
-	$("#skills").waypoint(
-		function () {
-			$(".progress .progress-bar").each(function () {
-				$(this).css("width", $(this).attr("aria-valuenow") + "%");
-			});
-		},
-		{
-			offset: "80%",
-		}
-	);
-
 	// jQuery counterUp (used in Facts section)
 	$('[data-toggle="counter-up"]').counterUp({
 		delay: 10,
@@ -226,53 +194,9 @@
 		layoutMode: "fitRows",
 	});
 
-	$("#portfolio-flters li").on("click", function () {
-		$("#portfolio-flters li").removeClass("filter-active");
-		$(this).addClass("filter-active");
-
-		portfolioIsotope.isotope({
-			filter: $(this).data("filter"),
-		});
-		aos_init();
-	});
-
 	// Initiate venobox (lightbox feature used in portofilo)
 	$(document).ready(function () {
 		$(".venobox").venobox();
-	});
-
-	// Clients carousel (uses the Owl Carousel library)
-	$(".clients-carousel").owlCarousel({
-		autoplay: true,
-		dots: true,
-		loop: true,
-		responsive: {
-			0: {
-				items: 2,
-			},
-			768: {
-				items: 4,
-			},
-			900: {
-				items: 6,
-			},
-		},
-	});
-
-	// Testimonials carousel (uses the Owl Carousel library)
-	$(".testimonials-carousel").owlCarousel({
-		autoplay: true,
-		dots: true,
-		loop: true,
-		items: 1,
-	});
-
-	// Portfolio details carousel
-	$(".portfolio-details-carousel").owlCarousel({
-		autoplay: true,
-		dots: true,
-		loop: true,
-		items: 1,
 	});
 
 	// Init AOS

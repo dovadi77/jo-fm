@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Esphimere';
+    src: url('Esphimere-BoldItalic.woff2') format('woff2'),
+        url('Esphimere-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere';
+    src: url('Esphimere-Bold.woff2') format('woff2'),
+        url('Esphimere-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere Extra';
+    src: url('Esphimere-ExtraLightItalic.woff2') format('woff2'),
+        url('Esphimere-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere Extra';
+    src: url('Esphimere-ExtraLight.woff2') format('woff2'),
+        url('Esphimere-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere';
+    src: url('Esphimere-Italic.woff2') format('woff2'),
+        url('Esphimere-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere';
+    src: url('Esphimere-LightItalic.woff2') format('woff2'),
+        url('Esphimere-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere';
+    src: url('Esphimere-Light.woff2') format('woff2'),
+        url('Esphimere-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere Semi';
+    src: url('Esphimere-SemiBoldItalic.woff2') format('woff2'),
+        url('Esphimere-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere Semi';
+    src: url('Esphimere-SemiBold.woff2') format('woff2'),
+        url('Esphimere-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere';
+    src: url('Esphimere-Thin.woff2') format('woff2'),
+        url('Esphimere-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere';
+    src: url('Esphimere-ThinItalic.woff2') format('woff2'),
+        url('Esphimere-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Esphimere';
+    src: url('Esphimere.woff2') format('woff2'),
+        url('Esphimere.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
