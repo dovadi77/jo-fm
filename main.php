@@ -1,7 +1,5 @@
 <?php
 require("header.php");
-$contact = checkContact($con);
-$chat = liveChat($con);
 ?>
 <!-- ======= Intro Section ======= -->
 <section id="intro">

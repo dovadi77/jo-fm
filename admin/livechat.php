@@ -18,7 +18,7 @@
       <div id="console-event"></div>
       <div class="form-group">
         <label for="syntax">Link Livechat Tawk.to :</label>
-        <input type="text" name="syntax" value="<?= $data['syntax'] ?>" class="form-control">
+        <textarea name="syntax" id="syntax" rows="7" class="form-control"><?=($data['syntax']) ?></textarea>
       </div>
       <input type="submit" value="UPDATE" class="btn btn-lg btn-primary rounded-lg">
     </form>

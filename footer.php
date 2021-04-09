@@ -63,6 +63,7 @@
 		  </ul>
 		</div>
 
+
 		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 		<!-- Uncomment below i you want to use a preloader -->
 		<div id="preloader"></div>
@@ -79,6 +80,10 @@
 
 		<!-- Template Main JS File -->
 		<script src="assets/js/main.js"></script>
+
+		<!-- Livechat -->
+		<?= $chat['status'] == 'true' ? $chat['syntax']:''?>
+
 		</body>
 
 		</html>

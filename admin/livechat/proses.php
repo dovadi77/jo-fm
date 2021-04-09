@@ -10,9 +10,10 @@ if(isset($_POST['status'])){
     }
 }
 if(isset($_POST['syntax'])){
-  $s = $_POST['syntax'];
-  if(!$data = mysqli_query($con, "UPDATE livechat set `syntax` = '$s'")){
-    echo 'alert("Something went wrong")';
+  $syntax = mysqli_real_escape_string($con,$_POST['syntax']);
+  echo $syntax;
+  if(!$data = mysqli_query($con, "UPDATE `livechat` set `syntax` = '$syntax'")){
+    echo '<script>alert("Something went wrong")</script>';
   }
   header("Location: ../livechat.php");
   

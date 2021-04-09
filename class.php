@@ -28,7 +28,7 @@ function checkZone($con)
 
 function liveChat($con)
 {
-    $stmt = $con->prepare("SELECT * FROM `zone`");
+    $stmt = $con->prepare("SELECT * FROM `livechat`");
     $stmt->execute();
     $data = $stmt->get_result();
     $row = $data->fetch_assoc();

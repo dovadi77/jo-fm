@@ -1,4 +1,7 @@
-<?php require("config.php"); require("class.php") ?>
+<?php require("config.php"); require("class.php"); 
+$contact = checkContact($con);
+$chat = liveChat($con);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
