@@ -1,5 +1,7 @@
 <?php
 require("header.php");
+$contact = checkContact($con);
+$chat = liveChat($con);
 ?>
 <!-- ======= Intro Section ======= -->
 <section id="intro">
@@ -136,19 +138,41 @@ require("header.php");
       </header>
 
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+        <?php
+        $data = showData($con, 'combo');
+        while ($row = $data->fetch_assoc()) {
+            if ($row['status'] == 'true') {
+      ?>
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <div class="portfolio-wrap">
             <div class="portfolio-title">
               <h5 class="text-uppercase m-0 font-weight-bold" style="letter-spacing: 1px">
-                Combo Family HD
+                <?=$row['nama-paket']?>
               </h5>
             </div>
             <figure>
-              <img src="assets/img/f3.jpeg" class="img-fluid" alt="" />
-              <a href="#test-inline" class="link-preview venobox" data-gall="portfolioGallery" title="Combo Family HD"
-                data-vbtype="inline"><i class="ion ion-eye"></i></a>
-              <a href="#ntarinikeWA" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              <img src="assets/img/<?=$row['image']?>" class="img-fluid" alt="" />
+              <a href="#detail<?= $row['id'] ?>" class="link-preview venobox" data-gall="portfolioGallery"
+                title="<?= $row['nama-paket'] ?>" data-vbtype="inline"><i class="ion ion-eye"></i></a>
+              <a target="_blank"
+                href="https://wa.me/<?= $contact['nowa'] ?>/?text=Halo%20Admin,%20saya%20ingin%20order%20paket%20First%20Media%20<?= urlencode($row['nama-paket']) ?>"
+                class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
             </figure>
+
+            <div class="d-none" id="detail<?= $row['id'] ?>">
+              <div class="container my-3">
+                <h1 class="text-center font-weight-bold text-uppercase"><?= $row['nama-paket'] ?></h1>
+                <img src="assets/img/<?=$row['image']?>" alt="<?= $row['nama-paket'] ?>"
+                  class="d-block img-fluid mx-auto mb-3">
+                <?= $row['desc-detail'] ?>
+                <div class="my-3">
+                  <a target="_blank"
+                    href="https://wa.me/<?= $contact['nowa'] ?>/?text=Halo%20Admin,%20saya%20ingin%20order%20paket%20First%20Media%20<?= urlencode($row['nama-paket']) ?>"
+                    class="btn btn-block rounded-pill primary">Order Sekarang</a>
+                </div>
+              </div>
+            </div>
 
             <div class="portfolio-info">
               <i class="ion-ios-speedometer" style="color: #f3983e; font-size: 5em; line-height: normal"></i>
@@ -156,154 +180,37 @@ require("header.php");
                 <div class="border-bottom p-1">
                   <p class="gray-text">Unlimited UP TO</p>
                   <h4 class="speed-info font-weight-bold m-0 mb-1">
-                    10 Mbps
+                    <?= $row['kecepatan'] ?> Mbps
                   </h4>
                 </div>
                 <div class="border-bottom p-1">
-                  <h4 class="speed-info font-weight-bold m-0 mb-1">117</h4>
+                  <h4 class="speed-info font-weight-bold m-0 mb-1"><?= $row['channel'] ?></h4>
                   <p class="gray-text">Channel TV</p>
-                  <span class="rounded-pill px-2 py-1" style="background-color: #f3983e">11 SD | 11 HD</span>
+                  <span class="rounded-pill px-2 py-1"
+                    style="background-color: #f3983e"><?= $row['channel-detail'] ?></span>
                 </div>
                 <div class="border-bottom p-1">
                   <p class="gray-text">Biaya Berlangganan</p>
                   <h5 class="pricing m-0">
-                    <span>Rp.</span><strong>999.000</strong><span>/ bln</span>
+                    <span>Rp.</span><strong><?= $row['harga'] ?></strong><span>/ bln</span>
                   </h5>
                 </div>
                 <div class="border-bottom p-1">
                   <p class="gray-text">PROMO</p>
                   <p>
-                    Info tambahan disini misalnya promo gituan apa itu
-                    internet, channel tv, dan dsb. bisa diatur lewat admin
+                    <?= $row['desc-depan'] ?>
                   </p>
                 </div>
               </div>
               <div class="border-bottom px-3 py-2">
-                <a href="#sadasd" class="btn btn-block rounded-pill primary">Order Sekarang</a>
+                <a target="_blank"
+                  href="https://wa.me/<?= $contact['nowa'] ?>/?text=Halo%20Admin,%20saya%20ingin%20order%20paket%20First%20Media%20<?= urlencode($row['nama-paket']) ?>"
+                  class="btn btn-block rounded-pill primary">Order Sekarang</a>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <div class="portfolio-title">
-              <h5 class="text-uppercase m-0 font-weight-bold" style="letter-spacing: 1px">
-                Combo Family HD
-              </h5>
-            </div>
-            <figure>
-              <img src="assets/img/f3.jpeg" class="img-fluid" alt="" />
-              <a href="#test-inline" class="link-preview venobox" data-gall="portfolioGallery" title="Combo Family HD"
-                data-vbtype="inline"><i class="ion ion-eye"></i></a>
-              <a href="#ntarinikeWA" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <i class="ion-ios-speedometer" style="color: #f3983e; font-size: 5em; line-height: normal"></i>
-              <div>
-                <div class="border-bottom p-1">
-                  <p class="gray-text">Unlimited UP TO</p>
-                  <h4 class="speed-info font-weight-bold m-0 mb-1">
-                    10 Mbps
-                  </h4>
-                </div>
-                <div class="border-bottom p-1">
-                  <h4 class="speed-info font-weight-bold m-0 mb-1">117</h4>
-                  <p class="gray-text">Channel TV</p>
-                  <span class="rounded-pill px-2 py-1" style="background-color: #f3983e">11 SD | 11 HD</span>
-                </div>
-                <div class="border-bottom p-1">
-                  <p class="gray-text">Biaya Berlangganan</p>
-                  <h5 class="pricing m-0">
-                    <span>Rp.</span><strong>999.000</strong><span>/ bln</span>
-                  </h5>
-                </div>
-                <div class="border-bottom p-1">
-                  <p class="gray-text">PROMO</p>
-                  <p>
-                    Info tambahan disini misalnya promo gituan apa itu
-                    internet, channel tv, dan dsb. bisa diatur lewat admin
-                  </p>
-                </div>
-              </div>
-              <div class="border-bottom px-3 py-2">
-                <a href="#sadasd" class="btn btn-block rounded-pill primary">Order Sekarang</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <div class="portfolio-title">
-              <h5 class="text-uppercase m-0 font-weight-bold" style="letter-spacing: 1px">
-                Combo Family HD
-              </h5>
-            </div>
-            <figure>
-              <img src="assets/img/f3.jpeg" class="img-fluid" alt="" />
-              <a href="#test-inline" class="link-preview venobox" data-gall="portfolioGallery" title="Combo Family HD"
-                data-vbtype="inline"><i class="ion ion-eye"></i></a>
-              <a href="#ntarinikeWA" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <i class="ion-ios-speedometer" style="color: #f3983e; font-size: 5em; line-height: normal"></i>
-              <div>
-                <div class="border-bottom p-1">
-                  <p class="gray-text">Unlimited UP TO</p>
-                  <h4 class="speed-info font-weight-bold m-0 mb-1">
-                    10 Mbps
-                  </h4>
-                </div>
-                <div class="border-bottom p-1">
-                  <h4 class="speed-info font-weight-bold m-0 mb-1">117</h4>
-                  <p class="gray-text">Channel TV</p>
-                  <span class="rounded-pill px-2 py-1" style="background-color: #f3983e">11 SD | 11 HD</span>
-                </div>
-                <div class="border-bottom p-1">
-                  <p class="gray-text">Biaya Berlangganan</p>
-                  <h5 class="pricing m-0">
-                    <span>Rp.</span><strong>999.000</strong><span>/ bln</span>
-                  </h5>
-                </div>
-                <div class="border-bottom p-1">
-                  <p class="gray-text">PROMO</p>
-                  <p>
-                    Info tambahan disini misalnya promo gituan apa itu
-                    internet, channel tv, dan dsb. bisa diatur lewat admin
-                  </p>
-                </div>
-              </div>
-              <div class="border-bottom px-3 py-2">
-                <a href="#sadasd" class="btn btn-block rounded-pill primary">Order Sekarang</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="assets/img/portfolio/f4.jpg" class="img-fluid" alt="" />
-              <a href="#test-inline" class="link-preview venobox" data-gall="portfolioGallery" title="Web 3"
-                data-vbtype="inline"><i class="ion ion-eye"></i></a>
-              <a href="#ntarinikeWA" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="d-none" id="test-inline">
-              <div class="container">
-                <h1>Hello World!</h1>
-              </div>
-            </div>
-
-            <div class="portfolio-info">
-              <h4><a href="javascript:void(0);">Web 3</a></h4>
-              <p>Web</p>
-            </div>
-          </div>
-        </div>
+        <?php }}?>
       </div>
     </div>
   </section>
@@ -314,7 +221,9 @@ require("header.php");
     <div class="container text-center" data-aos="zoom-in">
       <h3>Tunggu Apalagi ?</h3>
       <p>Apakah anda tertarik dengan produk kami ?</p>
-      <a href="#paket" class="btn primary rounded-pill p-3">
+      <a target="_blank"
+        href="https://wa.me/<?= $contact['nowa'] ?>/?text=Halo%20saya%20ingin%20bertanya%20terkait%20dengan%20produk%20First%20Media"
+        class="btn primary rounded-pill p-3">
         <h4 class="m-0">Pesan Sekarang!</h4>
       </a>
     </div>

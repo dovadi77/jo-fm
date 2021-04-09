@@ -14,15 +14,16 @@ if (!isset($_SESSION['username'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Admin | Promo First Mediaku</title>
-  <link href="<?php echo $base_url ?>admin/css/styles.css" rel="stylesheet">
-  <link href="<?php echo $base_url ?>admin/css/switches.css" rel="stylesheet">
+  <title>Admin | JO - Executive First Media</title>
+  <link href="<?= $base_url ?>admin/css/styles.css" rel="stylesheet">
+  <link href="<?= $base_url ?>admin/css/switches.css" rel="stylesheet">
   <link href="<?= $base_url ?>assets/vendor/font-awesome/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.3/cropper.css" />
 </head>
 
 <body class="sb-nav-fixed">
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" href="<?php echo $base_url ?>admin/main.php">Admin Panel</a>
+    <a class="navbar-brand" href="<?= $base_url ?>admin/main.php">Admin Panel</a>
     <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
         class="fas fa-bars"></i></button>
     <!-- Navbar-->
@@ -44,7 +45,7 @@ if (!isset($_SESSION['username'])) {
         <div class="sb-sidenav-menu">
           <div class="nav">
             <div class="sb-sidenav-menu-heading">Core</div>
-            <a class="nav-link" href="<?php echo $base_url ?>admin/main.php">
+            <a class="nav-link" href="<?= $base_url ?>admin/main.php">
               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
               Dashboard
             </a>
@@ -67,34 +68,12 @@ if (!isset($_SESSION['username'])) {
                 <!-- <a class="nav-link" href="layout-static.html">Family HD</a> -->
               </nav>
             </div>
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFastnet"
-              aria-expanded="false" aria-controls="collapseLayouts">
-              <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-              Fastnet
-              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-            </a>
-            <div class="collapse" id="collapseFastnet" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-              <nav class="sb-sidenav-menu-nested nav">
-                <?php
-                                $sql = "SELECT * FROM fastnet order by id ASC";
-                                $query = mysqli_query($con, $sql);
-                                while ($data = mysqli_fetch_array($query)) {
-                                    echo '<a class="nav-link" href="edit.php?id=' . $data['id'] . '&db=fastnet">' . $data['nama-paket'] . '</a>';
-                                }
-                                ?>
-                <!-- <a class="nav-link" href="layout-static.html">Family HD</a> -->
-              </nav>
-            </div>
-            <a class="nav-link" href="<?php echo $base_url ?>admin/zones.php">
-              <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-              Zones
-            </a>
-            <a class="nav-link" href="<?php echo $base_url ?>admin/profile.php">
+            <a class="nav-link" href="<?= $base_url ?>admin/profile.php">
               <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
               Profile
             </a>
             <div class="sb-sidenav-menu-heading">Website</div>
-            <a class="nav-link" href="<?php echo $base_url ?>" target="_blank">
+            <a class="nav-link" href="<?= $base_url ?>" target="_blank">
               <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
               View
             </a>
@@ -120,7 +99,7 @@ if (!isset($_SESSION['username'])) {
         </div>
         <div class="sb-sidenav-footer">
           <div class="small">Logged in as:</div>
-          <?php echo $_SESSION['username']; ?>
+          <?= $_SESSION['username']; ?>
         </div>
       </nav>
     </div>

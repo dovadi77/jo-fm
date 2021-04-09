@@ -13,21 +13,154 @@
             <script src="<?= $base_url ?>assets/vendor/jquery/jquery.min.js"></script>
             <script src="<?= $base_url ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
             <script src="<?= $base_url ?>admin/js/scripts.js"></script>
-            <script src="<?= $base_url ?>assets/vendor/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-            <script src="<?= $base_url ?>assets/vendor/ckeditor/ckeditor-full.js"></script>
+            <script src="<?= $base_url ?>admin/js/paket.js"></script>
+            <script src="<?= $base_url ?>admin/js/livechat.js"></script>
+            <script src="<?= $base_url ?>admin/js/zones.js"></script>
+            <script src="<?= $base_url ?>assets/vendor/ckeditor5/build/ckeditor.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.3/cropper.js"></script>
+            <script src="<?= $base_url ?>admin/js/photo.js"></script>
             <script>
-              CKEDITOR.replace('depan', {
-                removeButtons: 'Save',
-                removePlugins: 'Save',
-              });
-              CKEDITOR.replace('detail', {
-                removeButtons: 'Save',
-                removePlugins: 'Save',
-              });
+              ClassicEditor
+                .create(document.querySelector('#depan'), {
+                  toolbar: {
+                    items: [
+                      'heading',
+                      '|',
+                      'bold',
+                      'italic',
+                      'link',
+                      'bulletedList',
+                      'numberedList',
+                      'alignment',
+                      'strikethrough',
+                      'subscript',
+                      'superscript',
+                      'underline',
+                      'todoList',
+                      'fontColor',
+                      'fontSize',
+                      'fontBackgroundColor',
+                      'fontFamily',
+                      'highlight',
+                      '|',
+                      'outdent',
+                      'indent',
+                      '|',
+                      'imageUpload',
+                      'blockQuote',
+                      'htmlEmbed',
+                      'specialCharacters',
+                      'insertTable',
+                      'mediaEmbed',
+                      'undo',
+                      'redo',
+                      'CKFinder',
+                      'code',
+                      'codeBlock'
+                    ]
+                  },
+                  language: 'en',
+                  image: {
+                    toolbar: [
+                      'imageTextAlternative',
+                      'imageStyle:full',
+                      'imageStyle:side',
+                      'linkImage'
+                    ]
+                  },
+                  table: {
+                    contentToolbar: [
+                      'tableColumn',
+                      'tableRow',
+                      'mergeTableCells'
+                    ]
+                  },
+                  licenseKey: '',
+
+
+                })
+                .then(editor => {
+                  window.editor = editor;
+                })
+                .catch(error => {
+                  console.error('Oops, something went wrong!');
+                  console.error(
+                    'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:'
+                  );
+                  console.warn('Build id: e1jomiizqou4-qgxwpagkaghx');
+                  console.error(error);
+                });
+              ClassicEditor
+                .create(document.querySelector('#detail'), {
+                  toolbar: {
+                    items: [
+                      'heading',
+                      '|',
+                      'bold',
+                      'italic',
+                      'link',
+                      'bulletedList',
+                      'numberedList',
+                      'alignment',
+                      'strikethrough',
+                      'subscript',
+                      'superscript',
+                      'underline',
+                      'todoList',
+                      'fontColor',
+                      'fontSize',
+                      'fontBackgroundColor',
+                      'fontFamily',
+                      'highlight',
+                      '|',
+                      'outdent',
+                      'indent',
+                      '|',
+                      'imageUpload',
+                      'blockQuote',
+                      'htmlEmbed',
+                      'specialCharacters',
+                      'insertTable',
+                      'mediaEmbed',
+                      'undo',
+                      'redo',
+                      'CKFinder',
+                      'code',
+                      'codeBlock'
+                    ]
+                  },
+                  language: 'en',
+                  image: {
+                    toolbar: [
+                      'imageTextAlternative',
+                      'imageStyle:full',
+                      'imageStyle:side',
+                      'linkImage'
+                    ]
+                  },
+                  table: {
+                    contentToolbar: [
+                      'tableColumn',
+                      'tableRow',
+                      'mergeTableCells'
+                    ]
+                  },
+                  licenseKey: '',
+
+
+                })
+                .then(editor => {
+                  window.editor = editor;
+                })
+                .catch(error => {
+                  console.error('Oops, something went wrong!');
+                  console.error(
+                    'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:'
+                  );
+                  console.warn('Build id: e1jomiizqou4-qgxwpagkaghx');
+                  console.error(error);
+                });
             </script>
-            <script src="<?php echo $base_url ?>admin/js/livechat.js"></script>
-            <script src="<?php echo $base_url ?>admin/js/paket.js"></script>
-            <script src="<?php echo $base_url ?>admin/js/zones.js"></script>
             </body>
 
             </html>

@@ -5,13 +5,13 @@ $request = $_SERVER['REQUEST_URI'];
 
 $loc_ass = 'assets/';
 
-// $con = mysqli_connect("localhost", "root", "", "multiweb_fm");
+$con = mysqli_connect("localhost", "root", "", "fm");
 
-// // Check connection
-// if (mysqli_connect_errno()) {
-//     echo "Failed to connect to MySQL: " . mysqli_connect_error();
-//     exit();
-// }
+// Check connection
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    exit();
+}
 
 
-// session_start();
+session_start();

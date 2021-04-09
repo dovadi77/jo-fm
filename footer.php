@@ -55,7 +55,13 @@
 		<!-- End Footer -->
 
 		<!-- Floating Button -->
-
+		<div class="social-container">
+		  <ul class="social-icons">
+		    <li><a target="_blank" href="https://wa.me/<?= $contact['nowa'] ?>"><i class="fab fa-whatsapp"></i></a></li>
+		    <li><a target="_blank" href="tel:+<?= $contact['nohp'] ?>"><i class="fas fa-phone-alt"></i></a></li>
+		    <li><a target="_blank" href="mailto:<?= $contact['email'] ?>"><i class="fas fa-envelope"></i></a></li>
+		  </ul>
+		</div>
 
 		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 		<!-- Uncomment below i you want to use a preloader -->

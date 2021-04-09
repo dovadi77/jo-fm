@@ -3,20 +3,29 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title><?=$url?> | Promo First Media <?=date('Y')?> Internet dan TV kabel kualitas TERBAIK</title>
 
-  <title>BizPage Bootstrap Template</title>
-  <meta content="" name="description" />
-  <meta content="" name="keywords" />
+  <!-- Meta for SEO -->
+  <meta name="twitter:description" content="Wah!! Promo terbaru dari First Media di tahun <?=date('Y')?> nih, hanya dengan 249rb saja anda bisa
+    menggunakan internet dengan kualitas terbaik dan UNLIMITED, juga dapat menikmati TV Kabel dengan kualitas 4K terbaik
+    di kelasnya. Penasaran dengan promonya klik ...">
+  <meta name="twitter:image" content="assets/img/fmx-circle.png">
+  <meta property="og:title" content="Promo Terbaru First Media 2020">
+  <meta property="og:type" content="website">
+  <meta name="description" content="Wah!! Promo terbaru dari First Media di tahun <?=date('Y')?> nih, hanya dengan 249rb saja anda bisa
+    menggunakan internet dengan kualitas terbaik dan UNLIMITED, juga dapat menikmati TV Kabel dengan kualitas 4K terbaik
+    di kelasnya. Penasaran dengan promonya klik ...">
+  <meta property="og:image" content="assets/img/logo.svg">
+  <meta name="twitter:card" content="summary">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon" />
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
-    rel="stylesheet" />
+  <!-- Icon for SEO -->
+  <link rel="icon" type="image/png" sizes="271x270" href="assets/img/fmx-circle.png">
+  <link rel="icon" type="image/png" sizes="271x270" href="assets/img/fmx-circle.png">
+  <link rel="icon" type="image/png" sizes="271x270" href="assets/img/fmx-circle.png">
+  <link rel="icon" type="image/png" sizes="271x270" href="assets/img/fmx-circle.png">
+  <link rel="icon" type="image/png" sizes="271x270" href="assets/img/fmx-circle.png">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
